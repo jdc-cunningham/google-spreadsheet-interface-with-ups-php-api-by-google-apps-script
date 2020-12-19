@@ -32,3 +32,8 @@ The `wsdl` folder should be stock as it comes from their API examples. The `inde
 
 ### Closing
 Anyway I put about 16hrs into this between figuring out how to use the UPS API and then figuring out the GAS part as I had never used GAS before. I'm also aware Zappier does this to some extent.
+
+#### Sidenote
+I developed this a different way initially with my own interface. Sadly this little app won't really see the light of day anyway but it's not much better than the public quote calculator anyway. I don't know I kind of liked the design.
+
+![other interface with ReactJS](./repo-images/interface-readme.png)
