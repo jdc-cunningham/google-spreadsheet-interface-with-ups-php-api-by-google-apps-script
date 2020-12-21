@@ -16,6 +16,18 @@ The ideal way to make a Google Apps Script "professionally" would be to do it af
 
 Anyway this was new to me so it was cool figuring it out.
 
+### Running this code
+If you actually wanted to try and use this code as is, you'd need:
+* your own domain, presumably with https and PHP running(note some required XML-related module(s))
+  * move the contents of the `ups-api` folder to that domain
+  * take out the `.example` from the `.env.example` file and fill in the fields(you need a UPS acct and API access)
+  * note the `VALID_API_KEYS` this can be any string you want just to limit your GS script and endpoint from being used by anyone
+* open up a Google Spreadsheet and from this spreadsheet get to the Google Apps Script editor
+  * paste in the contents of `google-apps-script.gs.js` then update the endpoint url to match yours
+  * note that the spreadsheet should match what you see in the gifs above due to the trigger col/row locations
+  
+At this point you should have everything you need. To do some intial checks by checking your PHP logs if requests from the GS are going through. Also check by doing `Logger.log('...');` calls on the GAS side to see what's happening.
+
 ### Basic error handling
 The error handling checks if the minimum fields to make a UPS API call are met, particularly the zip from, zip to and weight field. The dimensions cell is technically not blank, the minimum that I found is 1 cubic inch(can't be empty). If a required cell is empty(from left to right), the alert prompt is triggered and the error cell is highlighted in red.
 
