@@ -10,6 +10,8 @@ This is a demo of interfacing Google Spreadsheet with UPS API (PHP) via a Google
 ### How it works
 On the spreadsheet you can insert a script that runs on the spreadsheet using Google Apps Script. While your spreadsheet is open you can enter the Apps Script editor by going to `Tools > Script Editor`. Then in there, there are basic "hooks" you can use eg. `onEdit` which fire when a cell is modified(move cursor off active cell). In my case I had to change to a custom `atEdit` in order to do the external API request from inside Google Apps Script.
 
+Side note: you'll probably want to have your GAS logs open so you can see the events in real time whenever you call `Logger.log('your msg');`. Those logs are viewed by going to `View > Logs` then click the link in the popup that takes you to `Apps Script Dashboard`. This is not the same thing as plain `console.log('...');` in JS since this is running on the cloud.
+
 The ideal way to make a Google Apps Script "professionally" would be to do it after getting oAuth permission and requesting access. Then you can insert the script I believe into the user's drive account/folder. Not sure how you associate it with a particular thing eg. spreadsheet at this time.
 
 Anyway this was new to me so it was cool figuring it out.
